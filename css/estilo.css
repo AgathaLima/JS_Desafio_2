@@ -116,25 +116,29 @@ table img {
     color: white;
 }
 
-.modal-form{
+#form{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
-    padding: 0 20px;
+    text-align: center;
 }
 
-.modal-field{
-    width: calc(50% - 10px);
+.input{
+    width: 80%;
     height: 40px;
     outline-style: none;
     border-style: none;
     box-shadow: 0 0 2px black;
     padding: 0 10px;
     font-size:1rem;
+    text-align: center;
+    margin-left: 40px;
+    
+
 }
 
-.modal-field:focus{
+.input:focus{
     border: 2px solid var(--primary-color);
     box-shadow: 0 0 3px var(--primary-color);
 }

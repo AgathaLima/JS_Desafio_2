@@ -46,3 +46,17 @@ const crearCurso = (cliente) => {
 }  
 
 
+
+
+
+
+
+
+
+function adicionarJogos() {
+  console.log("clicou");
+  let img = document.getElementById("jogo").value;
+  if (img.endsWith(".jpg") || img.endsWith(".png")) {
+    listarJogosNaTela(img);
+  }
+}

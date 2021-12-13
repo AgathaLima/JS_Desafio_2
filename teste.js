@@ -2,7 +2,6 @@
 
 
 
-// JSON
 
 const tempCliente = {
     nome: "lorem",
@@ -64,21 +63,53 @@ const salvarCliente = () => {
     if (seFuncaoForValida ){
         const cliente = {
             nome: document.getElementById('nome').value,
-            //img : colocar
+            img : document.getElementById('img').value,
             descricao: document.getElementById('descricao').value
         }
         createClien(cliente)
         limparInput()
+        closeModal()
     }
+
 }
+const createRow = (cliente) => {
+    const newRow = document.createElement('tr')
+    newRow.innerHTML =`
+            <td>${cliente.nome}</td>
+            <td><img src="${cliente.img}"></td>
+            <td>${cliente.descricao}</td>
+            <td>
+                <button class="btn btn-secondary m-1">editar</button>
+                <button class="btn btn-danger m-1">excluir</button>
+            </td>
+    `
+    document.querySelector('#dados_tabela>tbody').appendChild(newRow)
+}
+
+const clearTable = () =>{
+    const rows = document.querySelectorAll('')
+}
+
+const updateTabele = () => {
+    const db_client = readClient()
+    createTable()
+    db_client.forEach(createRow)
+}
+updateTabele()
+
   
 //  eventos e o forms
 
 const openModal = () => document.getElementById('modal')
     .classList.add('active')
 
-const closeModal = () => document.getElementById('modal')
+const closeModal = () => {
+    document.getElementById('modal')
     .classList.remove('active')
+    
+}
+
+
 
 document.getElementById('cadastrarCliente')
     .addEventListener('click', openModal)
@@ -91,4 +122,10 @@ document.getElementById('modalClose')
 document.getElementById('salvar')
     .addEventListener('click', salvarCliente)
 
-// document.getElementById('cancela')
+
+document.getElementById('cancelar')
+.addEventListener('click', closeModal)
+
+
+
+// **** PAREI NA FUNCÇÃO CLEARTABLE ****
