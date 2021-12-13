@@ -7,7 +7,7 @@ const servicos = [
   {
     nome: 'Marketing Digital',
     imagem: 'imagens/ilustra-marketing.png',
-    descricao: ''
+    descricao: 'Consequatur debitis ipsa numquam illum placeat quoddeleniti.'
   },
   {
     nome: 'Desenvolvimento Web',
@@ -47,28 +47,66 @@ const salvaServico = () => {
       descricao: document.getElementById('descricao').value
     }
   }
+
+  const index = document.getElementById('nome').dataset.index
+  if (index == 'novo') {
+    // necessário chamar as funcoes de criação aqui
+    console.log('criar')
+  } else {
+    updateServicos(index, servicos)
+    // chamar modal aqui
+  }
 }
 
-const criaRow = servico => {
+const criaRow = (servico, index) => {
   const novoRow = document.createElement('tr')
   novoRow.innerHTML = `
   <td>${servico.nome}</td>
+  <td><img src="${servico.imagem}" class="img-fluid" /></td>
+  <td>${servico.descricao}</td>
   <td>
-    <img src="${servico.imagem}" class="img-fluid" />
-  </td>
-  <td>
-    ${servico.descricao}
-  </td>
-  <td>
-    <button id="salvar" class="btn btn-secondary m-1">editar</button>
+    <button class="btn btn-secondary m-1" id="editar${index}">Editar</button>
     <button class="btn btn-danger m-1">excluir</button>
   </td>
   `
+  document.querySelector('#tabelaServicos>tbody').appendChild(novoRow)
+}
+
+const limpaTabela = () => {
+  const rows = document.querySelectorAll('#tabelaServicos>tbody tr')
+  rows.forEach(row => row.parentNode.removeChild(row))
 }
 
 const updateTabela = () => {
   const dbServicos = readServicos()
-  dbServicos.forEach(servico => {
-    criaRow(servico)
-  })
+  limpaTabela()
+  dbServicos.forEach(criaRow)
 }
+
+const preencheCampos = servicos => {
+  document.getElementById('nome').value = servicos.nome
+  document.getElementById('imagem').value = servicos.imagem
+  document.getElementById('descricao').value = servicos.descricao
+  document.getElementById('nome').dataset.index = servicos.index
+}
+
+const editaServico = index => {
+  const servico = readServicos()[index]
+  servico.index = index
+  preencheCampos(servico)
+}
+
+const editar = event => {
+  if (event.target.type == 'button') {
+    const [action, index] = event.target.id.splite('-')
+    if (action == 'editar') {
+      editaServico(index)
+    }
+  }
+}
+
+updateTabela()
+
+document
+  .querySelector('#tabelaServicos>tbody')
+  .addEventListener('click', editar)
