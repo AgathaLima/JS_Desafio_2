@@ -1,3 +1,7 @@
+// Inclusão parte - Ágatha
+
+
+
 // JSON
 
 const tempCliente = {
@@ -44,13 +48,47 @@ const createClien = (cliente) => {
     setLocalStorage(db_cliente)
 }  
 
+const seFuncaoForValida = () => {
+   return document.getElementById('form').reportValidity()
+}
 
 // Interaçãpo com a página
 
-const saveClient = () => {
-    if (validarCliente){
-        console.log("Cadastrando cliente")
+ const limparInput = () =>{
+ const input = document.querySelectorAll('.input')
+ input.forEach(input => input.value = "")
+} 
+
+
+const salvarCliente = () => {
+    if (seFuncaoForValida ){
+        const cliente = {
+            nome: document.getElementById('nome').value,
+            //img : colocar
+            descricao: document.getElementById('descricao').value
+        }
+        createClien(cliente)
+        limparInput()
     }
 }
+  
+//  eventos e o forms
 
-// fatal incluir os eventos e o forms
+const openModal = () => document.getElementById('modal')
+    .classList.add('active')
+
+const closeModal = () => document.getElementById('modal')
+    .classList.remove('active')
+
+document.getElementById('cadastrarCliente')
+    .addEventListener('click', openModal)
+
+document.getElementById('modalClose')
+    .addEventListener('click', closeModal)
+
+// Botão "salva ou cancelar dentro do form"
+
+document.getElementById('salvar')
+    .addEventListener('click', salvarCliente)
+
+// document.getElementById('cancela')

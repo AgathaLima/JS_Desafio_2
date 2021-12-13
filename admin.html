@@ -28,12 +28,9 @@
 
 
           <h3>Serviços</h3>
-          <button class="btn btn-primary" id="cadastrarCliente">Adicionar novo</button>
+          <button type="button" class="btn btn-primary" id="cadastrarCliente">Adicionar novo</button>
           <div>
-            <form action="">
-              <input type="text">
-
-            </form>
+            </header>
           </div>
           <table class="table my-5" id="dados_tabela">
             <thead>
@@ -78,6 +75,23 @@
       </div>
     </div>
   </section>
+    <!-- Início da inclusão do form -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+          <header class="modal-header">
+              <h2>Novo Curso</h2>
+              <span class="modal-close" id="modalClose">&#10006;</span>
+          </header>
+          <form class="form" id="form">
+              <input type="text" class="input" id="nome" placeholder="Nome do curso" required >
+              <input type="text" class="input" id="descricao" placeholder="Descrição do curso" required >
+          </form>
+          <footer class="form-footer">
+            <button class="btn btn-primary" id="salvar">Salvar</button>
+            <button class="btn btn-danger m-1" id="cancelar">Cancelar</button>
+        </footer>
+        <!-- FIM do form -->
+      </div>
   <footer class="py-3 bg-light">
     <div class="container text-center">
       <p class="m-0">
