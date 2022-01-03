@@ -1,11 +1,10 @@
-// const clienteTemp = {
-//     nome: 'Ágatha',
-//     email: 'agatha.lima01@hotmail.com',
-//     celular: '9999999-9999',
-//     cidade: 'Salvador'
-// }
+// Adicionando parte - Gustavo
 
-// const cadastraCliente = (cliente) => {
-//     localStorage.setItem('db_cliente', 'clienteTemp')
-// }
+// Função CRUD -  Delete
+
+const deleteCurso = (index) => {
+    const dbClient = readClient()
+    dbClient.splice(index, 1)
+    setLocalStorage(dbClient) 
+}
 
