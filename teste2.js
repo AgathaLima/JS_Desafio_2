@@ -1,47 +1,41 @@
 
 
-const tempCliente = {
-    nome: "lorem",
-    imagem: "lorem",
-    descricao: "lorem"
-}
-
 // Criação do localStorage
 
-const getLocalStorage = () => JSON.parse(localStorage.getItem("db_client")) ?? []
-const setLocalStorage = (db_cliente) => localStorage.setItem("db_client", JSON.stringify(db_cliente)) 
+const getLocalStorage = () => JSON.parse(localStorage.getItem("db_servico")) ?? []
+const setLocalStorage = (db_servico) => localStorage.setItem("db_servico", JSON.stringify(db_servico)) 
 
 
 
 // Função CRUD - DELETE
 
-const deleteCliente = (index) => {
-    const db_cliente = readClient()
-    db_cliente.splice(index, 1)
-    setLocalStorage(db_cliente)
+const deleteServico = (index) => {
+    const db_servico = lerServico()
+    db_servico.splice(index, 1)
+    setLocalStorage(db_servico)
 }
 
 
 // Função CRUD - UPDATE
 
-const updateClient = (index, cliente) => {
-    const db_cliente = readClient()
-    db_cliente[index] = cliente
-    setLocalStorage(db_cliente)
+const updateServico = (index, servico) => {
+    const db_servico = lerServico()
+    db_servico[index] = servico
+    setLocalStorage(db_servico)
 } 
 
 
 // Função CRUD - READ
 
-const readClient = () => getLocalStorage()
+const lerServico = () => getLocalStorage()
 
 
 // Função CRUD - CREATE
 
-const createClien = (cliente) => {
-    const db_cliente = getLocalStorage()
-    db_cliente.push(cliente)
-    setLocalStorage(db_cliente)
+const criarServico = (servico) => {
+    const db_servico = getLocalStorage()
+    db_servico.push(servico)
+    setLocalStorage(db_servico)
 }  
 
 const seFuncaoForValida = () => {
@@ -56,51 +50,106 @@ const seFuncaoForValida = () => {
 } 
 
 
-const salvarCliente = () => {
+const salvarServico = () => {
     if (seFuncaoForValida ){
-        const cliente = {
+        const servico = {
             nome: document.getElementById('nome').value,
             img : document.getElementById('img').value,
             descricao: document.getElementById('descricao').value
         }
-        createClien(cliente)
-        limparInput()
-        closeModal()
+        const index = document.getElementById('nome').dataset.index
+        if (index == 'new'){
+        criarServico(servico)
+        //limparInput()
+        updateTabela()
+        fecharModal()
+        } else {
+            updateServico(index, servico)
+            updateTabela()
+            fecharModal()
+            
+        }
     }
 
-}
-const createRow = (cliente) => {
-    const newRow = document.createElement('tr')
-    newRow.innerHTML =`
-            <td>${cliente.nome}</td>
-            <td><img src="${cliente.img}"></td>
-            <td>${cliente.descricao}</td>
+} 
+const criarLinha = (servico, index) => {
+    const novaLinha = document.createElement('tr')
+    novaLinha.innerHTML =`
+            <td>${servico.nome}</td>
+            <td><img src="${servico.img}"></td>
+            <td>${servico.descricao}</td>
             <td>
-                <button class="btn btn-secondary m-1" id="salvar">editar</button>
-                <button class="btn btn-danger m-1">excluir</button>
+                <button class="btn btn-secondary m-1" id="editar-${index}">editar</button>
+                <button class="btn btn-danger m-1" id="deletar-${index}">excluir</button>
             </td>
     `
-    document.querySelector('#dados_tabela>tbody').appendChild(newRow)
+    document.querySelector('#dados_tabela>tbody').appendChild(novaLinha)
 }
 
-const clearTable = () =>{
-    const rows = document.querySelectorAll('')
+const limparTabela = () =>{
+    const linhas = document.querySelectorAll('#dados_tabela>tbody tr')
+    linhas.forEach(linha => linha.parentNode.removeChild(linha))
 }
 
-const updateTabele = () => {
-    const db_client = readClient()
-    // createTable()
-    db_client.forEach(createRow)
+const updateTabela = () => {
+    const db_servico = lerServico()
+    limparTabela()
+    db_servico.forEach(criarLinha)
 }
-updateTabele()
+
+/// *** MEXI ANALU ****
+
+// const editaServico = index => {
+//     const servico = readServicos()[index]
+//     servico.index = index
+//     preencheCampos(servico)
+//   }
+
+const preencherCampos = (servico) => {
+    document.getElementById('nome').value = servico.nome
+    document.getElementById('img').value = servico.img
+    document.getElementById('descricao').value = servico.descricao
+    document.getElementById('nome').dataset.index = servico.index
+}
+
+const editarServico = (index) => {
+    const servico = lerServico()[index]
+    servico.index = index
+    preencherCampos(servico)
+    abrirModal()
+    
+}
+
+const editarDeletar = (event) =>{
+    if(event.target.type === 'submit') {
+        const [acao, index] = event.target.id.split('-')
+        if (acao == 'editar') {
+            editarServico(index)
+        }else {
+            const servico = lerServico(index)
+            const confirme = window.confirm(`Deseja realmente excluir o curso ?`)
+            if (confirme){
+                deleteServico(index)
+                updateTabela()
+                
+            } 
+            
+          }
+        
+    }
+       
+    }
+
+updateTabela()
 
   
 //  eventos e o forms
 
-const openModal = () => document.getElementById('modal')
+const abrirModal = () => document.getElementById('modal')
     .classList.add('active')
 
-const closeModal = () => {
+const fecharModal = () => {
+    limparInput()
     document.getElementById('modal')
     .classList.remove('active')
     
@@ -109,20 +158,31 @@ const closeModal = () => {
 
 
 document.getElementById('cadastrarCliente')
-    .addEventListener('click', openModal)
+    .addEventListener('click', abrirModal)
 
 document.getElementById('modalClose')
-    .addEventListener('click', closeModal)
+    .addEventListener('click', fecharModal)
 
 // Botão "salva ou cancelar dentro do form"
 
 document.getElementById('salvar')
-    .addEventListener('click', salvarCliente)
+    .addEventListener('click', salvarServico)
 
 
 document.getElementById('cancelar')
-.addEventListener('click', closeModal)
+.addEventListener('click', fecharModal)
+
+document.querySelector('#dados_tabela>tbody')
+.addEventListener('click', editarDeletar)
+// Read and Update
+
+// const lerServico = () => getLocalStorage()
+
+// const updateServico = (index, servico) => {
+//   const db_Servico = lerServico()
+//   db_Servico[index] = servico
+//   setLocalStorage(db_Servico)
+// }
 
 
 
-// **** PAREI NA FUNCÇÃO CLEARTABLE ****
