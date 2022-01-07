@@ -41,19 +41,19 @@ Antes de criar as funções essenciais, lembre-se que todos os cursos devem ser 
 
 Essa função ao clicar serve para abrir o modal, ela exibe o formulário de cadastro de serviço para que as informações sejam inseridas. Elas permanecem em tela até posterior edição ou exclusão.
 
-<img src="https://github.com/guhmorais/JS_Desafio_2/blob/gustavo/Criar.png?raw=true" width="500px"></td>
+<img src="criar.png" width="500px"></img>
 
 #### **Editar:**
 
 Essa função ao clicar exibe o formulário preenchido com os dados do serviço escolhido para o usuário _editar_/alterar as informações salvas anteriormente no "banco de dados" e guardar as alterações ao clicar em _salvar_.
 
-<img src="editar.jpeg" width="500px"></td>
+<img src="editar.png" width="500px"></img>
 
 #### **Excluir:**
 
 Função que ao clicar _exclui_ perante confirmação, todas as adicções/alterações no serviço escolhido.
 
-<img src="excluir.jpeg" width="500px"></td>
+<img src="excluir.png" width="500px"></img>
 
 ## Tecnologias Usadas
 
