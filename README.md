@@ -47,7 +47,7 @@ Essa função ao clicar serve para abrir o modal, ela exibe o formulário de cad
 
 Essa função ao clicar exibe o formulário preenchido com os dados do serviço escolhido para o usuário _editar_/alterar as informações salvas anteriormente no "banco de dados" e guardar as alterações ao clicar em _salvar_.
 
-<img src="crud/public/imagen_readme/editar.png" width="500px"></img>
+<img src="editar.png" width="500px"></img>
 
 #### **Excluir:**
 
