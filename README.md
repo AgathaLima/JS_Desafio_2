@@ -1,5 +1,8 @@
 # Agência Cronos
 
+<a href="https://agathalima.github.io/JS_Desafio_2/crud/public/index.html"> ---> ACESSE NOSSO PROJETO AQUI <--- </a>
+
+
 ## 2º Desafio Gama Academy em Grupo
 
 ### A proposta do desafio é trabalhar em trio e colocar em prática as habilidades adquiridas até o momento, sendo necessário Lógica da Programação, Javascript e React.
@@ -87,4 +90,3 @@ Função que ao clicar _exclui_ perante confirmação, todas as adicções/alter
 <a href="https://github.com/guhmorais">
         <img src="https://avatars.githubusercontent.com/u/93994851?v=4" width="100px;" alt="Foto de Gustavo perfil github"/>
 
-#<a href="https://agathalima.github.io/JS_Desafio_2/crud/public/index.html"> ---> ACESSE NOSSO PROJETO AQUI <--- </a>
