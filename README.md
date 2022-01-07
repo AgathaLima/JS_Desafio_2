@@ -41,19 +41,19 @@ Antes de criar as funções essenciais, lembre-se que todos os cursos devem ser 
 
 Essa função ao clicar serve para abrir o modal, ela exibe o formulário de cadastro de serviço para que as informações sejam inseridas. Elas permanecem em tela até posterior edição ou exclusão.
 
-<img src="./imagens/criar.jpeg" width="500px"></td>
+<img src="criar.jpeg" width="500px"></td>
 
 #### **Editar:**
 
 Essa função ao clicar exibe o formulário preenchido com os dados do serviço escolhido para o usuário _editar_/alterar as informações salvas anteriormente no "banco de dados" e guardar as alterações ao clicar em _salvar_.
 
-<img src="./imagens/editar.jpeg" width="500px"></td>
+<img src="editar.jpeg" width="500px"></td>
 
 #### **Excluir:**
 
 Função que ao clicar _exclui_ perante confirmação, todas as adicções/alterações no serviço escolhido.
 
-<img src="./imagens/excluir.jpeg" width="500px"></td>
+<img src="excluir.jpeg" width="500px"></td>
 
 ## Tecnologias Usadas
 
