@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>CRONOS AGÊNCIA - admin</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/estilo.css" />
-    <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
-  </head>
 
-<<<<<<< HEAD
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,6 +13,7 @@
 </head>
 
 <body>
+  <div id="root">
   <header>
     <div class="container">
       <a href="#">
@@ -44,9 +30,7 @@
 
           <h3>Serviços</h3>
           <button type="button" class="btn btn-primary" id="cadastrarCliente">Adicionar novo</button>
-          <div>
-            </header>
-          </div>
+        </header>
           <table class="table my-5" id="dados_tabela">
             <thead>
               <tr>
@@ -56,7 +40,7 @@
                 <td>Ações</td>
               </tr>
             </thead>
-            <tbody>
+          <tbody>
                <!-- <tr> 
                 <td>Desenvolvimento Web</td>
                 <td><img src="imagens/ilustra-web.png" class="img-fluid" /></td>
@@ -65,7 +49,8 @@
                   <button class="btn btn-secondary m-1">editar</button>
                   <button class="btn btn-danger m-1">excluir</button>
                 </td>
-              </tr>
+              </tr> 
+               
               <tr>
                 <td>Marketing Digital</td>
                 <td><img src="imagens/ilustra-marketing.png" class="img-fluid" /></td>
@@ -98,16 +83,22 @@
               <span class="modal-close" id="modalClose">&#10006;</span>
           </header>
           <form class="form" id="form">
+            <div class="alinhar">
+              <p class="p">Nome do curso:</p>
               <input type="text" id="nome" data-index="new" class="input" required placeholder="Nome do curso" >
+              <p class="p">Descreva o curso:</p>
               <input type="text" class="input" id="descricao" required placeholder="Descrição do curso" >
-              <input type="text" class="input" id="img" required placeholder="Insira endereço de imagem" >
+              <p class="p">Selecione uma imagem da web:</p>
+              <input type="text" class="input" id="img" required placeholder="Insira URL da imagem" >
+            </div>
           </form>
-          <footer class="form-footer">
-            <button class="btn btn-primary" id="salvar">Salvar</button>
+          <footer class="form-footer">    
+            <button class="btn btn-success" id="salvar">Salvar</button>
             <button class="btn btn-danger m-1" id="cancelar">Cancelar</button>
         </footer>
         <!-- FIM do form -->
       </div>
+  </div>
   <footer class="py-3 bg-light">
     <div class="container text-center">
       <p class="m-0">
@@ -126,66 +117,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
-  <script src="teste2.js"></script>
-</body>
-=======
-  <body>
-    <header>
-      <div class="container">
-        <a href="#">
-          <img src="imagens/CRONOS-logo-white.png" alt="Agência CRONOS" />
-        </a>
-        <h1>Painel administrativo</h1>
-      </div>
-    </header>
-    <section id="servicos" class="py-5 mb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h3>Serviços</h3>
-            <button class="btn btn-primary" id="cadastrarCliente">
-              Adicionar novo
-            </button>
-            <table id="tabelaServicos" class="table my-5">
-              <thead>
-                <tr>
-                  <td>Nome</td>
-                  <td>Imagem</td>
-                  <td>Descrição</td>
-                  <td>Ações</td>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="py-3 bg-light">
-      <div class="container text-center">
-        <p class="m-0">
-          copyright 2021
-          <img src="imagens/favicon.png" width="30" alt="" /> agência CRONOS
-        </p>
-      </div>
-    </footer>
->>>>>>> fecf60ef69ce6f50f8434b904e90bb72f2b80a8a
+  <script src="Arquivo.js"></script>
+</div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="main.js"></script>
-  </body>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae necessitatibus voluptatem similique facilis voluptas. Tenetur beatae iure officia asperiores consequatur deleniti aliquid, quam alias, sed, iusto impedit velit odio rerum?
+</body>
+
 </html>
