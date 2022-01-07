@@ -57,15 +57,15 @@ Função que ao clicar _exclui_ perante confirmação, todas as adicções/alter
 
 ## Tecnologias Usadas
 
-<img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50" height="40" style="max-width:100%;"></img>
+<img aligne="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50" height="40" style="max-width:100%;"></img>
 
-<img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50" height="40" style="max-width:100%;"></img>
+<img aligne="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50" height="40" style="max-width:100%;"></img>
 
-<img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="BOOTSTRAP" width="50" height="40" style="max-width:100%;"></img>
+<img text-align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="BOOTSTRAP" width="50" height="40" style="max-width:100%;"></img>
 
-<img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JS" width="50" height="40" style="max-width:100%;"></img>
+<img text-align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JS" width="50" height="40" style="max-width:100%;"></img>
 
-<img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="REACTJS" width="50" height="40" style="max-width:100%;"></img>
+<img text-align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="REACTJS" width="50" height="40" style="max-width:100%;"></img>
 
 # Desenvolvedores
 
@@ -86,3 +86,5 @@ Função que ao clicar _exclui_ perante confirmação, todas as adicções/alter
 <div>
 <a href="https://github.com/guhmorais">
         <img src="https://avatars.githubusercontent.com/u/93994851?v=4" width="100px;" alt="Foto de Gustavo perfil github"/>
+
+#<a href="https://agathalima.github.io/JS_Desafio_2/crud/public/index.html"> ---> ACESSE NOSSO PROJETO AQUI <--- </a>
