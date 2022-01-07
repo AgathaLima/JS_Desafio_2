@@ -41,7 +41,7 @@ Antes de criar as funções essenciais, lembre-se que todos os cursos devem ser 
 
 Essa função ao clicar serve para abrir o modal, ela exibe o formulário de cadastro de serviço para que as informações sejam inseridas. Elas permanecem em tela até posterior edição ou exclusão.
 
-<img src="criar.png" width="500px">
+<img src="Criar.png" width="500px">
 
 #### **Editar:**
 
